@@ -1,0 +1,33 @@
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+parameters:
+    # The level 9 is the highest level
+    level: 5
+    paths:
+        - app
+        - bootstrap
+        - config
+        - routes
+        - tests
+
+    ignoreErrors:
+            - '#Access to an undefined property#'
+
+    excludePaths:
+        - tests
+        - database/*
+        - public/*
+        - resources/*
+        - app/Macros/*
+        - bootstrap/cache/*
+        - bootstrap/autoload.php
+        - */factories/*
+        - */migrations/*
+        - */seeds/*
+        - *.blade.php
+        - *.js
+        - vendor/*
+        - routes/console.php
+
+    checkMissingIterableValueType: false
+    treatPhpDocTypesAsCertain: false
